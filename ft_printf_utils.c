@@ -6,22 +6,26 @@
 /*   By: junheeki <junheeki@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:39:30 by junheeki          #+#    #+#             */
-/*   Updated: 2023/01/02 16:35:24 by junheeki         ###   ########.fr       */
+/*   Updated: 2023/01/04 17:10:15 by junheeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
+#include <stdlib.h>
 
-void	ft_putstr(char *s)
+void	ft_putstr(char *str)
 {
-	if (!s)
-		return ;
-	while (*s)
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		write(1, s, 1);
-		s++;
+		write(1, &str[i], 1);
+		i++;
 	}
 }
+
 int	ft_printstr(char *str)
 {
 	int	i;
@@ -40,20 +44,49 @@ int	ft_printstr(char *str)
 	return (i);
 }
 
-
-void	ft_putnbr_fd(int n, int fd)
+int	ft_printnbr(int n)
 {
-	long	num;
-	char	c;
+	int		len;
+	char	*str;
 
-	num = n;
-	if (num < 0)
-	{
-		write(fd, "-", 1);
-		num *= -1;
-	}
-	if (num >= 10)
-		ft_putnbr_fd(num / 10, fd);
-	c = '0' + (num % 10);
-	write(fd, &c, 1);
+	len = 0;
+	str = ft_itoa(n);
+	len = ft_printstr(str);
+	free(str);
+	return (len);
+}
+
+int	ft_printpercent(void)
+{
+	write(1, "%", 1);
+	return (1);
+}
+
+int	ft_print_unsigned(unsigned int nbr)
+{
+	size_t len;
+
+	len = ft_putnbr_base(nbr, "0123456789");
+	return (len);
+}
+
+int	ft_printf_hex(unsigned int nbr, const char format)
+{
+	size_t len;
+
+	if (format == 'X')
+		len = ft_putnbr_base(nbr, "0123456789ABCDEF");
+	else
+		len = ft_putnbr_base(nbr, "0123456789abcdef");
+	return (len);
+}
+
+static void	ft_putptr(unsigned long long ptr, size_t *len)
+{
+
+}
+
+int	ft_print_ptr(unsigned long long ptr)
+{
+
 }

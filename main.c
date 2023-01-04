@@ -6,16 +6,14 @@
 /*   By: junheeki <junheeki@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 13:07:28 by junheeki          #+#    #+#             */
-/*   Updated: 2023/01/02 13:08:07 by junheeki         ###   ########.fr       */
+/*   Updated: 2023/01/04 12:59:53 by junheeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int main(void)
+int	main(void)
 {
 	// c with no fl
-	ft_printf("%c%c%c%c%c", 'i','n','i','t','6');
-  // c with - fl
-
+	ft_printf("%c%c%c%c%c", 'i', 'n', 'i', 't', '6');
+	// c with - fl
 	return (0);
 }
