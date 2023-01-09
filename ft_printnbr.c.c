@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printnbr.c.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junheeki <junheeki@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/02 13:07:28 by junheeki          #+#    #+#             */
-/*   Updated: 2023/01/09 12:20:06 by junheeki         ###   ########.fr       */
+/*   Created: 2023/01/09 12:18:21 by junheeki          #+#    #+#             */
+/*   Updated: 2023/01/09 12:20:03 by junheeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-#include <stdarg.h>>
+#include "libft.h"
+#include <stdlib.h>
 
-int	main(void)
+int	ft_printnbr(int n)
 {
-	// c with no fl
-	ft_printf("%c%c%c%c%c", 'i', 'n', 'i', 't', '6');
-	// c with - fl
-	return (0);
+	int		len;
+	char	*str;
+
+	len = 0;
+	str = ft_itoa(n);
+	len = ft_printstr(str);
+	free(str);
+	return (len);
 }

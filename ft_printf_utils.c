@@ -6,7 +6,7 @@
 /*   By: junheeki <junheeki@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:39:30 by junheeki          #+#    #+#             */
-/*   Updated: 2023/01/04 17:10:15 by junheeki         ###   ########.fr       */
+/*   Updated: 2023/01/09 12:20:01 by junheeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	ft_printnbr(int n)
 
 int	ft_printpercent(void)
 {
-	write(1, "%", 1);
+	write(1, '%', 1);
 	return (1);
 }
 
@@ -70,7 +70,7 @@ int	ft_print_unsigned(unsigned int nbr)
 	return (len);
 }
 
-int	ft_printf_hex(unsigned int nbr, const char format)
+int	ft_print_hex(unsigned int nbr, const char format)
 {
 	size_t len;
 
